@@ -69,7 +69,7 @@ def edit_image(image_path, prompt, model, api_key):
     result = None
     for attempt in range(max_retries):
         try:
-            with urllib.request.urlopen(req, timeout=120) as resp:
+            with urllib.request.urlopen(req, timeout=300) as resp:
                 result = json.loads(resp.read().decode("utf-8"))
             break  # Success
         except urllib.error.HTTPError as e:
